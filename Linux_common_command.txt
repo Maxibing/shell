@@ -1,0 +1,50 @@
+Linux常见命令：
+	ls
+		-a		显示全部文件			
+		-l		长格式显示文件信息	
+				(示例drwxr-xr-x 24 root root 4096 Apr  3 04:16 ../		
+				第一列d代表目录，第二列24表示有24个链接指向这个文件，第三列是这个文件/文件夹的所有者
+				第四列是这个文件/文件夹的所有组，第五列大小，第六列最后修改时间			
+		-lS		文件按大小排序）
+		-R		递归显示子目录
+		
+	cd
+		/**/**	示例cd /home/yinhe	绝对路径，切换到根目录下的home/yinhe
+		**/**	示例cd yinhe	相对路径，切换到子目录yinhe
+		..		示例cd ..	切换到当前目录的父目录
+		
+	cat
+				不带任何参数，默认打开一个空白文件
+		-b		不计算空行的情况下显示行号
+		-n		行数显示，空行也计算
+		-E		显示到每行结束部分，尾部显示$
+	
+	文件重定向
+		>		示例cat > out.txt	把终端里输入的字符保存到out.txt中，每次执行时，会覆盖之前的内容
+		>>		示例cat >> out.txt	把终端里输入的字符保存到out.txt中，每次执行时，在文件尾部添加新内容，不会覆盖
+		>		示例cat a.txt > b.txt	把a.txt拷贝到b.txt
+		>>		示例cat a.txt b.txt >> c.txt	把a和b拷贝到c中
+		
+	mkdir
+				示例mkdir dirname	在当前目录下创建名为dirname的文件夹
+		-p		示例mkdir -p fname/cname	父目录和子目录一起创建
+		{}		示例mkdir -p fname/{name1,name2,name3}	创建多个目录，中间用,隔开
+	
+	rmdir
+				示例rmdir abd	删除单个文件夹adb
+		-p		示例rmdir -p fname/cname	该命令只能删除cname
+
+	rm
+		-r		强制删除一个文件夹下的所有文件和路径
+		
+	cp
+				示例cp file1 file2	把file1拷贝到file2
+				示例cp file1 file2 dir	把file1 file2拷贝到dir目录下
+		-i		示例cp -i file1 file2 dir1	把file1 file2拷贝到dir目录下，提示是否覆盖原有文件
+		-vR		示例cp dir1 dir2	把dir1拷贝到dir2下
+		
+	mv
+				示例mv file1 file2	相当于重命名
+				示例mv file1 dir1	把file1移动到dir1下
+		-i		提示是否覆盖原有文件，不加-i会直接覆盖
+				示例mv dir1 dir2	相当于重命名
