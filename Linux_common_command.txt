@@ -91,3 +91,84 @@ Linux常见命令：
 	chmod
 		权限	rwxrwxrwx	第一组rwb表示拥有者权限。第二组rwb表示用户组权限。第三组rwb表示其他权限
 				示例：chmod 777	三个数字代表三个组，其中r=4，w=2，x=1，r代表可读，w代表可写，x代表可执行
+				
+	which
+				示例：which ls	查看ls的路径
+				
+	whatis
+				示例：whatis ls	查看ls的含义
+	
+	useradd
+				示例：useradd ***	添加用户***
+		-m		示例：useradd *** -m	添加用户***，并在home目录下添加用户目录
+				
+	passwd		示例：passwd ***	为用户***添加密码
+	
+	userdel
+				示例：userdel ***	删除用户***
+		-rm		示例：userdel *** 	删除用户***并删除home目录下的用户目录
+		
+	group
+		groupadd	示例：groupadd ***	新建***组
+		groupdel	示例：groupdel ***	删除***组
+		gpasswd		示例：gpasswd -a ### ***	把用户###添加到***组中
+					示例：gpasswd -d ### ***	把用户###从***组中删除
+					
+	df
+		-h			示例：df -h	显示磁盘使用情况，-h表示是换算成M、G、T等方便人类读的单位
+		
+	du
+					显示文件占用磁盘情况
+					
+	free
+		-k			查看内存使用情况，-k表示单位为kb
+		-m			表示单位为M
+		-g			表示单位为G
+		
+	watch
+		-m			示例：watch free -m	查看free默认的刷新时间
+		-n			示例：watch -n 4 free -m	设置刷新时间为4
+		
+	head
+					示例：head ***	查看***的前10行，默认是前10行
+		-n*			示例：head -n5 ***	查看***的前*行，示例是前5行
+		
+	tail
+					示例：tail ***	查看***的后10行，默认是后10行
+		-n*			示例：tail -n5 ***	查看***的后*行，示例是后5行
+		-f			示例：tail -f ***	实时刷新最后10行
+		
+	find
+					示例：find /etc -name filename	在/etc目录下查找名为filename的文件
+					
+	wc
+		-c			示例：wc -c ***	显示***的bytes数
+		-l			显示line数
+		-w			显示字数
+
+	cal
+		-1			示例：cal -1	查看当前月份日历
+		ncal		示例：ncal	竖向显示日历
+		2018		显示2018年一年的日历
+		2 2018		显示2018年第2个月的日历
+		-4			显示最近的4个月的月份
+		
+	tar
+		-c			创建压缩包
+		-x			解压压缩包
+		-z			tar.gz包
+		
+	netstat
+		-a			表示按各个协议，分别统计连接数
+		| less		示例 netstat -a | less	和less命令结合，较少的查看内容
+		-t			表示tcp
+		-u			表示udp
+		-l			表示监听
+		-s			表示static
+		-p			表示pid
+	
+	apt-get
+		update		示例：apt-get update	升级下载adt-get组件
+		install ***	示例：apt-get install *** 下载安装***软件
+		remove ***	示例：apt-get remove ***	卸载***软件
+		
