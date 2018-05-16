@@ -48,3 +48,46 @@ Linux常见命令：
 				示例mv file1 dir1	把file1移动到dir1下
 		-i		提示是否覆盖原有文件，不加-i会直接覆盖
 				示例mv dir1 dir2	相当于重命名
+				
+	less
+				示例less file	用于打开内容比较多的文件，一次只会加载一部分内容到终端上，加载速度快
+				通过键盘上下箭头，点击一次像下读取一行和先上翻滚一行
+				page down和page up，点击一次内容就向下和向上翻滚一行。按键b和page up效果一样，b代表back。按键f和page down效果一样，f代表forward
+				按键g回到文件开头，g3翻到第三页，G翻到页尾
+				/代表搜索，输入/进入搜索模式，输入需要搜索的字符串，按回车即可搜索。按n表示查看下一个结果，按b表示向上翻查结果
+				q退出less
+				
+	more
+				示例more file	按空格下翻，按b上翻
+				
+	touch
+				touch file	快速创建空文件，文件存在时用于修改时间戳
+	
+	nano
+				示例nano 文件	可以用于创建空文件，打开c++代码，会代码高亮显示。页面中有操作提示
+				
+	su
+				switch ueser的缩写，示例su user	更换用户，不加user默认是更换到root
+				
+	sudo
+				superueser do的缩写，没权限的时候，需要sudo
+				
+	top
+				第一行是总体消耗情况，输入Ctrl + c退出top界面，按s可以设置刷新时间，按i可以不现实闲置或僵死的进程
+	
+	ps
+		-ux		查看当前激活的进程
+		-aux	查看当前所有进程
+		-U user	示例 ps -U mxb	查看用户mxb有关的进程
+		
+	kill
+				kill ***	杀死pid为***的进程
+				
+	echo
+		基本	示例：echo hello world		echo "hello world" 	这两种用法，都是同样的输出，建议加上双引号
+		引用	示例：str="hello world"		echo $str	echo "str is $str"		引用变量时加$
+		转义	示例：echo "line1 \nline2"	echo "test1 \ttest2"	\n表示换行	\t表示制表
+		
+	chmod
+		权限	rwxrwxrwx	第一组rwb表示拥有者权限。第二组rwb表示用户组权限。第三组rwb表示其他权限
+				示例：chmod 777	三个数字代表三个组，其中r=4，w=2，x=1，r代表可读，w代表可写，x代表可执行
