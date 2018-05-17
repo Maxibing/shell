@@ -87,6 +87,18 @@ Linux常见命令：
 		基本	示例：echo hello world		echo "hello world" 	这两种用法，都是同样的输出，建议加上双引号
 		引用	示例：str="hello world"		echo $str	echo "str is $str"		引用变量时加$
 		转义	示例：echo "line1 \nline2"	echo "test1 \ttest2"	\n表示换行	\t表示制表
+		-n		示例：ehco -n 123	; echo -n 456	输出结果会是123456
+		-e		激活转义字符，具体参考下面：
+					\a 发出警告声；
+					\b 删除前一个字符；
+					\c 最后不加上换行符号；
+					\f 换行但光标仍旧停留在原来的位置；
+					\n 换行且光标移至行首；
+					\r 光标移至行首，但不换行；
+					\t 插入tab；
+					\v 与\f相同；
+					\\ 插入\字符；
+					\nnn 插入nnn（八进制）所代表的ASCII字符；
 		
 	chmod
 		权限	rwxrwxrwx	第一组rwb表示拥有者权限。第二组rwb表示用户组权限。第三组rwb表示其他权限
