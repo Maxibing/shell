@@ -1,0 +1,45 @@
+read
+	-p	在提示语同一行输入	示例：read -p "Plese input your name:" user_name	其中"Plese input your name:"是提示语	user_name是存储用户输入的变量
+	-s	输入过程中，不显示		一般用在输入密码的地方
+
+传输变量
+	方式1	示例：echo $0 $1 $2	$3 运行脚本时，带上参数，如***.py arg1 arg2 arg3 其中arg1 arg2 arg3是参数，传给$1 $2 $3，而$0表示脚本本身，而非我们传入的参数
+	方式2	示例：args=($@)	；	echo ${args[0]} ${args[1]} ${args[2]}	这里把传入的参数存为数组， ${args[0]}表示传入的第一个参数
+	方式3	示例：echo $@	这里$@表示传入的参数列表，直接可以引用
+	统计	示例：echo $#	$#可以存储传入参数的个数
+
+if-then
+			示例：if command	;	then	;	command	;	fi
+	[]		示例：arg=91	；if [ arg>90 ]	；	then	;	echo "pass"	;	fi	中括号中间的条件，两边要加空格，否则会报错
+	(())	示例：arg=91	；if ((arg>90))	；	then	;	echo "pass"	;	fi	<、<=、>、>=都需要(())框起来
+	fi		fi代表if语句的结束	
+			整数比较符：        
+					-eq : (equal to)相等                      		例如： if [ "$a" -eq "$b"  ]  
+					-ne : (not equal to)不相等                 		例如： if [ "$a" -ne "$b"  ]  
+					-gt : (greater than)大于                		例如： if [ "$a" -gt "$b"  ]  
+					-ge : (greater than or equal to)大于或等于      例如： if [ "$a" -ge "$b"  ]  
+					-lt : (less than)小于                           例如： if [ "$a" -lt "$b"  ]  
+					-le : (less than or equal to)小于或等于         例如： if [ "$a" -le "$b"  ]  
+					<   : 小于                                    	例如： if (( "$a" < "$b" ))  
+					<=  : 小于等于                               	例如： if (( "$a" <= "$b" ))  
+					>   : 大于                                    	例如： if (( "$a" > "$b" ))  
+					>=  : 大于等于                                	例如： if (( "$a" >= "$b" ))       
+			字符串比较:       
+					=   : 等于                                      例如： if [ "$a" = "$b"   ]  
+					==  : 等于                                      例如： if [ "$a" == "$b"  ]  
+					!=  : 不等于                                    例如： if [ "$a" != "$b"  ]  
+					<   : 小于（ASCII字母顺序）                  	例如： if [[ "$a" < "$b" ]]  
+					>   : 大于（ASCII字母顺序）                   	例如： if [[ "$a" > "$b" ]]  
+					-z  : 字符不为空                  
+			文件比较：
+					-d	: 检查是否存在并是否是个目录				例如： if [ -d file ]
+					-e	: 检查文件是否存在							例如： if [ -e file ]
+					-f	: 检查文件是否存在并是否是个文件			例如： if [ -f file ]
+					-r	: 检查文件是否存在并可读					例如： if [ -r file ]
+					-s	: 检查文件是否存在并不为空					例如： if [ -s file ]
+					-w	: 检查文件是否存在并可写					例如： if [ -w file ]
+					-x	: 检查文件是否存在并可执行					例如： if [ -x file ]
+					-O	: 检查文件是否存在并被当前用户拥有			例如： if [ -O file ]
+					-G	: 检查文件是否存在并默认组是否为当前组		例如： if [ -G file ]
+					-nt	: 检查file1是否比file2新					例如： if [ file1 -nt file2 ]
+					-ot	: 检查file1是否比file2旧					例如： if [ file1 -ot file2 ]
