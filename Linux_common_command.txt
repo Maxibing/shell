@@ -184,3 +184,10 @@ Linux常见命令：
 		install ***	示例：apt-get install *** 下载安装***软件
 		remove ***	示例：apt-get remove ***	卸载***软件
 		
+	sed
+		-n 		只打印模式匹配的行
+		-e 		直接在命令行模式上进行sed动作编辑，此为默认选项
+		-f 		将sed的动作写在一个文件内，用–f filename 执行filename内的sed动作
+		-r 		支持扩展表达式
+		-i 		直接修改文件内容
+				sed 's/原字符串/替换字符串/' file	file文件中替换字符串
